@@ -159,7 +159,8 @@ public class MyArrayList<T> implements List<T> {
         }
         return index;
     }
-    public Object[] increaseArray(Object[] o){
+
+    private Object[] increaseArray(Object[] o){
         capacity = capacity + capacity / 2 + 1;
         Object[] newArray = new Object[capacity];
         for (int i = 0; i < size; i++) {
@@ -167,7 +168,8 @@ public class MyArrayList<T> implements List<T> {
         }
         return newArray;
     }
-    public Object[] reduceArray(Object[] o){
+
+    private Object[] reduceArray(Object[] o){
         Object[] newArray = new Object[size-1];
         for (int i = 0; i < size-1; i++) {
             newArray[i] = array[i];
