@@ -103,7 +103,7 @@ public class MyArrayList<T> implements List<T> {
     @Override
     public boolean remove(Object o) {
         if(contains(o) == false)
-        return false;
+            return false;
         else {
             int index = indexOf(o);
             remove(index);
@@ -126,13 +126,17 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public T get(int index) {
+        if(size <= 0 || index < 0 || index >= size )
+            return null;
         return (T) array[index];
     }
 
     @Override
     public T set(int index, T element) {
+        if(size <= 0 || index < 0 || index >= size )
+            return null;
         array[index] = element;
-        return null;
+        return (T) array[index];
     }
 
     @Override
